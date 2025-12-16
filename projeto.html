@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kanban - Estilo Trello</title>
+  <link rel="stylesheet" href="projeto.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">📋 Kanban Board</div>
+    <div class="actions">
+      <button id="btnAddBoard" class="btn">+ Quadro</button>
+      <button id="btnExport" class="btn">Exportar</button>
+      <label class="btn file-label">Importar
+        <input id="importFile" accept="application/json" type="file">
+      </label>
+      <button id="btnClear" class="btn danger">Limpar</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <aside class="panel">
+      <h3>➕ Adicionar Rápido</h3>
+
+      <input id="inputBoardName" placeholder="Nome do novo quadro" />
+      <button id="btnQuickBoard" class="btn primary" style="width:100%">Criar Quadro</button>
+
+      <hr style="border:none;border-top:1px solid #eee;margin:8px 0">
+
+      <input id="cardTitle" placeholder="Título do cartão" />
+      <textarea id="cardDesc" placeholder="Descrição (opcional)"></textarea>
+      <select id="selectBoard"></select>
+      <button id="btnAddCard" class="btn primary" style="width:100%">Adicionar Cartão</button>
+    </aside>
+
+    <section class="boards-wrap" id="boardsWrap"></section>
+  </main>
+
+  
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <h2 id="modalTitle">Editar</h2>
+      <div id="modalContent"></div>
+      <div class="modal-actions">
+        <button class="btn ghost" onclick="closeModal()">Cancelar</button>
+        <button class="btn primary" id="modalConfirm">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="projeto.js"></script>
+</body>
+</html>
